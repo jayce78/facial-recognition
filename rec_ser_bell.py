@@ -1,0 +1,35 @@
+import tkinter as tk
+import os
+
+def startfacerec():
+    os.system('python rec_ser_img.py')
+
+def write_slogan():
+    print("Somebody is at the door")
+
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+
+face_unknown = "You are not a registered resident of this property, please ring the bell"
+msg = tk.Message(root, text = face_unknown)
+msg.config(bg='grey', font=('times', 20, 'italic'))
+msg.pack()
+
+button1 = tk.Button(frame,
+                   text="Try again",
+                   fg="red",
+                   command=startfacerec())
+button1.pack(side=tk.LEFT)
+button1.config(height= 10, width = 10, font=('Helvetica', '20'))
+
+
+
+button2 = tk.Button(frame,
+                   text="Door bell",
+                   command=write_slogan)
+button2.pack(side=tk.LEFT)
+button2.config(height= 10, width = 10, font=('Helvetica', '20'))
+
+
+root.mainloop()
